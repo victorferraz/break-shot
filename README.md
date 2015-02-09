@@ -1,5 +1,7 @@
-#Installation
+Install
+------
 
-###npm install
-cd public/ && npm install && cd -
-grunt nodewebkit
+    npm install
+    cd public/ && npm install && cd -
+    grunt nodewebkit
+
