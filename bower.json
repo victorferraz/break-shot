@@ -1,9 +1,0 @@
-{
-  "name": "app",
-  "private": true,
-  "dependencies": {
-    "requirejs": "~2.1.11",
-    "jquery": "~1.10.2"
-  },
-  "devDependencies": {}
-}
