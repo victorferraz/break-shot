@@ -1,0 +1,41 @@
+{
+  "main": "index.html",
+  "name": "index.html",
+  "description": "demo app of node-webkit",
+  "version": "0.1.0",
+  "keywords": [
+    "demo",
+    "node-webkit"
+  ],
+  "window": {
+    "title": "node-webkit demo",
+    "icon": "link.png",
+    "toolbar": true,
+    "frame": true,
+    "width": 1200,
+    "height": 1000,
+    "position": "center",
+    "min_width": 1024,
+    "min_height": 768,
+    "max_width": 1920,
+    "max_height": 1020
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "ejs": "^1.0.0",
+    "fs-tools": "^0.2.11",
+    "jquery": "^2.1.1",
+    "mensch": "^0.3.1",
+    "webshot": "^0.15.3",
+    "xmlhttprequest": "^1.6.0"
+  },
+  "devDependencies": {
+    "gaze": "^0.6.4",
+    "q": "^1.0.1",
+    "unzip": "^0.1.9",
+    "webshot": "^0.15.3"
+  }
+}

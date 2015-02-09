@@ -1,0 +1,91 @@
+.type-url, .open-zip-file, .auto-sizing, .custom-size{
+  display: none;
+  padding-top: 50px;
+  margin-top: 50px;
+}
+
+.previous{
+    display: none;
+}
+
+.options-button{
+  width: 50%;
+  float: left;
+  background-position: 50% 25px;
+  background-size: 48px 48px;
+  background-repeat: no-repeat;
+  text-transform: uppercase;
+  background-image: url('../images/icons-48x48-04.svg');
+  padding: 90px 0px 0px 0px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: normal;
+  position: relative;
+}
+
+.opt-active{
+  background-color: #64FFD7;
+}
+
+.bt-from-file{
+  background-image: url('../images/icons-48x48-04.svg');
+}
+
+.bt-from-url{
+  background-image: url('../images/icons-48x48-12.svg');
+}
+
+
+.bt-auto-sizing{
+  background-image: url('../images/icons-48x48-09.svg');
+}
+
+.bt-custom-size{
+  background-image: url('../images/icons-48x48-08.svg');
+}
+
+
+.bt-output-jpg{
+  background-image: url('../images/icons-48x48-06.svg');
+}
+
+.bt-output-png{
+  background-image: url('../images/icons-48x48-07.svg');
+}
+
+.or-badge{
+  top: 80px;
+}
+
+.choose-type{
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+.file{
+    opacity: 0;
+    height: 50px;
+    top: 0px;
+    left: 0px;
+    position: absolute;
+    width: 200px;
+    cursor: pointer;
+}
+
+
+.navigation-button{
+    position: relative;
+    overflow: hidden;
+}
+
+.step{
+    display:none;
+}
+
+.step-one{
+    display:block;
+}

@@ -1,0 +1,40 @@
+{
+  "main": "index.html",
+  "name": "break-shot",
+  "description": "demo app of node-webkit",
+  "version": "0.1.0",
+  "keywords": [
+    "demo",
+    "node-webkit"
+  ],
+  "window": {
+    "title": "node-webkit demo",
+    "icon": "link.png",
+    "toolbar": true,
+    "frame": true,
+    "width": 1200,
+    "height": 800,
+    "position": "center",
+    "min_width": 1024,
+    "min_height": 768,
+    "max_width": 1920,
+    "max_height": 1020
+  },
+  "webkit": {
+    "plugin": true
+  },
+  "dependencies": {
+    "async": "^0.9.0",
+    "fs-tools": "^0.2.11",
+    "gulp": "^3.8.10",
+    "mensch": "^0.3.1",
+    "needle": "^0.7.10",
+    "webshot": "^0.15.3"
+  },
+  "devDependencies": {
+    "gaze": "^0.6.4",
+    "q": "^1.0.1",
+    "unzip": "^0.1.9",
+    "webshot": "^0.15.3"
+  }
+}
