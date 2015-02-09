@@ -11,3 +11,4 @@ tags
 Thumbs.db
 /nbproject/
 node_modules
+*.log
