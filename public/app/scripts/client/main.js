@@ -3,7 +3,9 @@ global.$ = $;
 var gui = require('nw.gui');
 gui.Window.get().show();
 
-var controller = require('./app/scripts/process/controller');
+var Controller = require('./app/scripts/process/controller');
+var Validate = require('./app/scripts/client/validate');
+
 
 var Main = function () {
     this.init();
@@ -11,6 +13,8 @@ var Main = function () {
 
 Main.prototype.init = function () {
     this.checkType = null;
+    this.fiels = null;
+    this.hook = null;
     this.submitButton = $('#submit-button');
     this.fileData = $('#file-data');
     this.btFromFile = $('#bt-from-file');
@@ -38,17 +42,36 @@ Main.prototype.addEventListeners = function () {
     this.btSave.click($.proxy(this.go, this));
 };
 
+
 Main.prototype.change = function () {
     if (this.currentItem === 0) {
-        this.btPrevious.hide();
-        this.btNext.show();
-    }else if (this.currentItem === this.totalSteps -1) {
-        this.btPrevious.show();
-        this.btNext.hide();
-    } else {
-        this.btPrevious.show();
-        this.btNext.show();
+        this.firstStep();
+    }else if (this.currentItem === 1) {
+        this.secondStep();
+    }else if (this.currentItem === 2) {
+        this.thirdStep();
     }
+};
+
+Main.prototype.firstStep = function () {
+    this.btPrevious.hide();
+    this.btNext.show();
+    this.goToStep();
+};
+
+Main.prototype.secondStep = function () {
+    this.btPrevious.show();
+    this.btNext.show();
+    this.goToStep();
+};
+
+Main.prototype.thirdStep = function () {
+    this.btPrevious.show();
+    this.btNext.hide();
+    this.goToStep();
+};
+
+Main.prototype.goToStep = function() {
     $(this.steps).hide();
     $(this.steps[this.currentItem]).show();
 };
@@ -94,7 +117,7 @@ Main.prototype.go = function (e) {
     objForm.file = $('.file').val();
     objForm.url = $('.url').val();
     objForm.origin = this.getOrigin(objForm);
-    controller.go(objForm);
+    Controller.go(objForm);
 };
 
 Main.prototype.getOrigin = function (objForm) {
@@ -108,8 +131,22 @@ Main.prototype.getOrigin = function (objForm) {
 };
 
 Main.prototype.next = function () {
-    this.currentItem++;
-    this.change();
+    var fields = $(this.steps[this.currentItem]).find('.required:visible');
+    if (Validate.isValid(fields)){
+        this.currentItem++;
+        this.change();
+    }
+};
+
+
+
+Main.prototype.isNotEmpty = function (field) {
+    if (  $(field).val() !== '' &&  $(field).val() !== $(field).attr('placeholder')  )  {
+        return true;
+    } else {
+        return false;
+    }
+
 };
 
 Main.prototype.previous = function () {

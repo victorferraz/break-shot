@@ -1,6 +1,6 @@
 'use strict';
 
-var Q = require('q')
+var Q = require('q');
 var request = require('request');
 var fs = require('fs');
 

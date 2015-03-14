@@ -2,24 +2,23 @@
 
 var webshot = require('webshot');
 var async = require('async');
-var $ = require('jquery');
 
-var TakePrintScreen = function () {
+var TakePrintScreen = function(){};
+
+TakePrintScreen.prototype.takePics = function (mediaArray, data) {
     this.index = 0;
-};
-
-
-TakePrintScreen.prototype.takePics = function (params, data) {
     this.data = data;
-    var args;
     this.names = [];
-    this.medias = params;
-    for (var i = 0; i < this.medias.length; i++) {
-        this.index = 0;
-        args = params[i];
-        console.log(args);
-        async.eachLimit(args, 10, this.take.bind(this, args), this.onFinished.bind(this));
+    var merged = [];
+    var params = null;
+    this.medias = mediaArray;
+    params = mediaArray;
+    console.log(data.size);
+    if (data.size === 'auto-sizing'){
+        params = merged.concat.apply(merged, mediaArray);
     }
+    console.log(params);
+    async.eachLimit(params, 10, this.take.bind(this, params), this.onFinished.bind(this));
 };
 
 
@@ -48,8 +47,8 @@ TakePrintScreen.prototype.onFinished = function(err){
 
 
 TakePrintScreen.prototype.take = function (args, media, callback) {
-    console.log(media);
     args = args[this.index];
+    console.log(args);
     var path;
     this.index++;
     var height = 768;

@@ -21,7 +21,7 @@
 <body>
   <main class="global-container">
     <nav class="menubar">
-      <div class="breakshot-logo"></div>
+      <h1 class="breakshot-logo"></h1>
       <a class="w-inline-block nav-item" href="index.html">
         <div class="nav-icon source">
           <div class="nav-text">1. Source</div>
@@ -49,7 +49,7 @@
               <i class="title-icon source"></i>
               <h2>source selection</h2>
             </div>
-            <div class="w-clearfix options-container">
+            <div class="w-clearfix options-container required" data-group-checkbox="true">
               <span  id="bt-from-url" class="w-inline-block options-button bt-from-url" href="#">
                   From an URL
                   <input type="radio" class="from choose-type" name="choose-type" value="from-url" >
@@ -62,13 +62,13 @@
             </div>
             <div class="type from-url type-url w-clearfix title-container">
               <h3>Type an URL:</h3>
-              <input class="w-input text-field url" id="URL" type="text" placeholder="http://" name="url">
+              <input class="w-input text-field url required" id="URL" type="text" placeholder="http://" name="url">
             </div>
             <div class="type from-file open-zip-file w-clearfix title-container">
               <h3>open a zip file:</h3>
               <p>In order to read your breakpoints properly in local files, you’ll need to zip together the HTML and all CSS files related to it.&nbsp;</p>
               <div class="navigation-button ordinary">
-                <input type="file" class="file" name="file" multiple>
+                <input type="file" class="file required" name="file" multiple>
                 <span class="label-file">Choose file</span>
               </div>
             </div>
@@ -78,15 +78,15 @@
               <i class="title-icon format"></i>
               <h2>sizing options</h2>
             </div>
-            <div class="w-clearfix options-container">
+            <div class="w-clearfix options-container required" data-group-checkbox="true">
               <span data-type="" id="bt-auto-size" class="w-inline-block options-button bt-auto-sizing" href="#">
                   AUTO SIZING
-                  <input type="radio" class="choose-size choose-type" name="choose-size" value="auto-sizing" >
+                  <input type="radio" class="choose-size choose-type required" name="choose-size" value="auto-sizing" >
               </span>
               <span class="or-badge">or</span>
               <span id="bt-custom-size" class="w-inline-block options-button bt-custom-size" href="#">
                   CUSTOM SIZE
-                  <input type="radio" class="choose-size choose-type" name="choose-size" value="custom-size" >
+                  <input type="radio" class="choose-size choose-type required" name="choose-size" value="custom-size" >
               </span>
             </div>
 
@@ -101,10 +101,10 @@
               <div class="w-row">
                 <div class="row row-size">
                   <div class="w-col w-col-5 column left">
-                    <input class="w-input choose-s text-field choose-width"  type="text" placeholder="choose-extension Width pixels" name="custom-width[]" >
+                    <input class="w-input choose-s text-field choose-width required"  type="text" placeholder="choose-extension Width pixels" name="custom-width[]" >
                   </div>
                   <div class="w-col w-col-5">
-                    <input class="w-input choose-s text-field choose-height"  type="text" placeholder="choose-extension Height pixels" name="custom-height[]" >
+                    <input class="w-input choose-s text-field choose-height required"  type="text" placeholder="choose-extension Height pixels" name="custom-height[]" >
                   </div>
                   <div class="w-col w-col-1 column right">
                     <span class="x">x</span>
@@ -124,12 +124,12 @@
             <div class="w-clearfix options-container">
               <span data-type="" id="bt-auto-size" class="w-inline-block options-button bt-output-jpg" href="#">
                   JPG
-                  <input type="radio" class="choose-extension choose-type" name="size-type" value="jpg" >
+                  <input type="radio" class="choose-extension choose-type required" name="size-type" value="jpg" >
               </span>
               <span class="or-badge">or</span>
               <span id="bt-custom-size" class="w-inline-block options-button bt-output-png" href="#">
                   PNG
-                  <input type="radio" class="choose-extension choose-type" name="size-type" value="png" >
+                  <input type="radio" class="choose-extension choose-type required" name="size-type" value="png" >
               </span>
             </div>
             <div class="none">
@@ -145,13 +145,14 @@
       </div>
     </section>
     <aside class="sidebar-container">
-      <div class="download-button-container"><a class="navigation-button save" href="#">Save files</a>
-      </div>
       <div class="sidebar">
         <div class="w-clearfix title-container">
           <div class="title-icon"></div>
           <h2>Preview &amp; Save</h2>
         </div>
+      </div>
+      <div class="download-button-container">
+        <a class="navigation-button save" href="#">Save files</a>
       </div>
     </aside>
   </main>

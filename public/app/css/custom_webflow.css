@@ -86,6 +86,15 @@
     display:none;
 }
 
+.input-error .options-button{
+    border: 3px solid #c0392b;
+}
+
+input[type='text'].input-error{
+    border: 3px solid #c0392b;
+}
+
 .step-one{
     display:block;
 }
+
