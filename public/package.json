@@ -4,7 +4,7 @@
   "description": "demo app of node-webkit",
   "version": "0.1.0",
   "keywords": [
-    "demo",
+    "resize",
     "node-webkit"
   ],
   "window": {
@@ -12,8 +12,8 @@
     "icon": "link.png",
     "toolbar": true,
     "frame": true,
-    "width": 1200,
-    "height": 800,
+    "width": 1000,
+    "height": 700,
     "position": "center",
     "min_width": 1024,
     "min_height": 768,

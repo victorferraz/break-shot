@@ -2,8 +2,7 @@
 
 var CustomSize = function () {};
 
-CustomSize.prototype.getSizes = function (urlMain, settings) {
-    this.urlMain = urlMain;
+CustomSize.prototype.getSizes = function (settings) {
     this.settings = settings;
     return this.mountArraySizes();
 };

@@ -5,11 +5,6 @@ var Validate = function (fields) {
     this.errors = [];
 };
 
-Validate.prototype.isEmail = function(field) {
-    var regXp = /^\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/;
-    return regXp.test($(field).val());
-};
-
 Validate.prototype.isNotEmpty = function (field) {
     if (  $(field).val() !== '' )  {
         return true;
@@ -19,7 +14,6 @@ Validate.prototype.isNotEmpty = function (field) {
 };
 
 Validate.prototype.isCheckedRadio = function(field) {
-
     if ($(field).data('group-checkbox') === true) {
         if ($(field).find('input:checked').length === 0 ){
             return false;
@@ -44,15 +38,6 @@ Validate.prototype.hook = function (valid, field) {
     }
 };
 
-Validate.prototype.meansTo = function (field) {
-    var meansToElem = $(this.form.find('.' + $(field).data('means')));
-    if (meansToElem.val() === $(field).val()) {
-        return true;
-    } else {
-        return false;
-    }
-};
-
 Validate.prototype.setValidClass = function (valid, field) {
     if (valid) {
         this.success(field);
@@ -74,15 +59,11 @@ Validate.prototype.success = function (field) {
 Validate.prototype.isValid = function (fields) {
     this.fields = fields;
     this.errors = [];
-    console.log(this.fields);
     for (var i = 0, l = this.fields.length; i < l; i++) {
         if ( this.isNotEmpty(this.fields[i]) || this.isCheckedRadio(this.fields[i]) ){
 
             this.hook(true, this.fields[i]);
 
-            if ($(this.fields[i]).data('means') !== undefined) {
-                this.hook(this.meansTo(this.fields[i]), this.fields[i]);
-            }
         } else {
             this.hook(false, this.fields[i]);
         }

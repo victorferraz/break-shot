@@ -20,6 +20,9 @@
 </head>
 <body>
   <main class="global-container">
+    <section class="modal">
+      <p class="wait-text">Aguarde, isso pode demorar alguns minutos...</p>
+    </section>
     <nav class="menubar">
       <h1 class="breakshot-logo"></h1>
       <a class="w-inline-block nav-item" href="index.html">
@@ -42,6 +45,7 @@
       </a>
     </nav>
     <section class="main-container">
+
       <div class="content source" id="main-content">
         <form id="form" action="">
           <fieldset data-step="1" class="step source step-one">
@@ -132,7 +136,7 @@
                   <input type="radio" class="choose-extension choose-type required" name="size-type" value="png" >
               </span>
             </div>
-            <div class="none">
+            <div>
               <h3>Define output filename:</h3>
               <input class="file-name w-input text-field" id="Filename" type="text" placeholder="Insert your filename prefix. Sizes and extensions will be added automatically." name="Filename">
             </div>
@@ -152,7 +156,10 @@
         </div>
       </div>
       <div class="download-button-container">
-        <a class="navigation-button save" href="#">Save files</a>
+        <a  href="#" class="navigation-button save none">Save files
+            <input type="file" name="destiny" class="save-destiny"  webkitdirectory >
+        </a>
+
       </div>
     </aside>
   </main>

@@ -5,6 +5,8 @@ var MediaQuerieRotine = require('../process/mediaquerierotine');
 var TakePrintScreen = require('../process/takeprintscreen');
 var ReadHtml = require('../process/readHtml');
 var CustomSize = require('../process/customsize');
+var DefaultSizes = require('../process/defaultsizes');
+
 var Q = require('q');
 var Controller = function () {};
 
@@ -16,15 +18,16 @@ Controller.prototype.go = function (data) {
     deferred.promise.then( function(readHtml) {
         var urlMain = GetCss.run(readHtml, settings);
         return urlMain;
-    }).then( function(urlMain) {
+    }).then( function() {
         var media = '';
         if (data.size === 'auto-sizing') {
-            media = MediaQuerieRotine.getBreakPoints(urlMain, settings);
+            media = DefaultSizes.getCommomScreens(settings);
         } else {
-            media = CustomSize.getSizes(urlMain, settings);
+            media = CustomSize.getSizes(settings);
         }
         return media;
     }).then( function(mediaQueries) {
+        console.log(mediaQueries);
         var take = TakePrintScreen.takePics(mediaQueries, settings);
         return take;
     });

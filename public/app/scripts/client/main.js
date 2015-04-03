@@ -15,6 +15,7 @@ Main.prototype.init = function () {
     this.checkType = null;
     this.fiels = null;
     this.hook = null;
+    this.modal = $('.modal');
     this.submitButton = $('#submit-button');
     this.fileData = $('#file-data');
     this.btFromFile = $('#bt-from-file');
@@ -27,7 +28,8 @@ Main.prototype.init = function () {
     this.btNext = $('.next');
     this.btPrevious = $('.previous');
     this.btAdd = $('.button-add');
-    this.btSave = $('.save');
+    this.btSave = $('.save-destiny');
+    this.containerSave = $('.navigation-button');
     this.form = $('#form');
     this.row = $('.w-row');
     this.addEventListeners();
@@ -39,7 +41,7 @@ Main.prototype.addEventListeners = function () {
     this.btNext.click($.proxy(this.next, this));
     this.btPrevious.click($.proxy(this.previous, this));
     this.row.on('click', '.button-add', $.proxy(this.addRow, this));
-    this.btSave.click($.proxy(this.go, this));
+    this.btSave.change($.proxy(this.go, this));
 };
 
 
@@ -54,18 +56,21 @@ Main.prototype.change = function () {
 };
 
 Main.prototype.firstStep = function () {
+    this.containerSave.hide();
     this.btPrevious.hide();
     this.btNext.show();
     this.goToStep();
 };
 
 Main.prototype.secondStep = function () {
+    this.containerSave.hide();
     this.btPrevious.show();
     this.btNext.show();
     this.goToStep();
 };
 
 Main.prototype.thirdStep = function () {
+    this.containerSave.show();
     this.btPrevious.show();
     this.btNext.hide();
     this.goToStep();
@@ -90,7 +95,8 @@ Main.prototype.addRow = function (e) {
     var target = $(e.currentTarget);
     var container = target.closest('.w-row');
     var parent = target.closest('.row');
-    $(parent).clone().appendTo(container);
+    var cloned = $(parent).clone().val('');
+    cloned.appendTo(container);
 };
 
 Main.prototype.formatSize = function (container) {
@@ -109,6 +115,8 @@ Main.prototype.formatSize = function (container) {
 Main.prototype.go = function (e) {
     e.preventDefault();
     var objForm =  {};
+    this.modal.show();
+    objForm.destiny = $(e.currentTarget).val();
     objForm.from = $('.from:checked').val();
     objForm.size = $('.choose-size:checked').val();
     objForm.customSize = this.formatSize($('.row-size'));
