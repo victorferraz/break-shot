@@ -18,12 +18,14 @@ Controller.prototype.go = function (data) {
     deferred.promise.then( function(readHtml) {
         var urlMain = GetCss.run(readHtml, settings);
         return urlMain;
-    }).then( function() {
+    }).then( function(urlMain) {
+        console.log(urlMain);
         var media = '';
+        media = MediaQuerieRotine.getBreakPoints(urlMain, settings);
         if (data.size === 'auto-sizing') {
-            media = DefaultSizes.getCommomScreens(settings);
+        //    media = DefaultSizes.getCommomScreens(settings);
         } else {
-            media = CustomSize.getSizes(settings);
+         //   media = CustomSize.getSizes(settings);
         }
         return media;
     }).then( function(mediaQueries) {

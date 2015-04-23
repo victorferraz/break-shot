@@ -2,6 +2,7 @@
 global.$ = $;
 var gui = require('nw.gui');
 gui.Window.get().show();
+gui.App.clearCache();
 
 var Controller = require('./app/scripts/process/controller');
 var Validate = require('./app/scripts/client/validate');
@@ -9,6 +10,7 @@ var Validate = require('./app/scripts/client/validate');
 
 var Main = function () {
     this.init();
+
 };
 
 Main.prototype.init = function () {

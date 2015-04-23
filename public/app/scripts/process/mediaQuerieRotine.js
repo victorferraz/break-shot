@@ -40,6 +40,7 @@ MediaQuerieRotine.prototype.readCss = function (style) {
 };
 
 MediaQuerieRotine.prototype.readArrayFiles = function (file) {
+    console.log(file);
     var array = [];
     var deferred = Q.defer();
     fs.readFile(file.css, 'utf8', function(err, result){
@@ -72,7 +73,6 @@ MediaQuerieRotine.prototype.analysisCss = function (arrayStyle) {
     this.verifyAdExists = false;
     var breakPoints = null;
     var result = null;
-
     for (var i = 0; i < arrayStyle.length; i++) {
         cssFile = arrayStyle[i];
         breakPoints = null;
@@ -83,7 +83,6 @@ MediaQuerieRotine.prototype.analysisCss = function (arrayStyle) {
             media[i] = breakPoints;
         }
     }
-
     return media;
 };
 
@@ -100,8 +99,6 @@ MediaQuerieRotine.prototype.getMedia = function (cssFile) {
     var arrayBanner = [];
     var res = null;
     var arrayMedia;
-
-
     for (var i = 0; i < ast.stylesheet.rules.length; i++) {
         tree = ast.stylesheet.rules[i];
         if (tree.type === 'media'){
@@ -110,11 +107,11 @@ MediaQuerieRotine.prototype.getMedia = function (cssFile) {
                 size = this.clearMedia(tree.name)[0];
                 array = [];
                 if (this.verifyArray[size] === undefined){
-                    array.width = size;
+                    array.size = size + 'x' + '768';
                     array.html  = cssFile.html;
                     media.push(array);
                 }
-                this.verifyArray[size] = size;
+                this.verifyArray[size] = size + 'x' + '768';
             }
 
             this.urlHtml = cssFile.html;
@@ -125,8 +122,15 @@ MediaQuerieRotine.prototype.getMedia = function (cssFile) {
 
         }
     }
+    if ( arrayBanner.length >0 ) {
+        console.log(arrayBanner.length);
+        arrayMedia = media.concat(arrayBanner);
+    } else {
+        console.log(media);
+        arrayMedia = media;
+    }
+    console.log(arrayMedia);
 
-    arrayMedia = media.concat(arrayBanner);
     return arrayMedia;
 };
 
@@ -163,10 +167,10 @@ MediaQuerieRotine.prototype.findProperties = function (obj){
     var items = [];
     for(var i=0; i < obj.declarations.length; i++) {
         if (obj.declarations[i].name === 'width'){
-            items.width = obj.declarations[i].value;
+            items.size = obj.declarations[i].value + 'x';
         }
         if (obj.declarations[i].name === 'height') {
-            items.height = obj.declarations[i].value;
+            items.size = items.size + obj.declarations[i].value;
         }
     }
     if('height' in items && 'width'in items) {

@@ -131,3 +131,8 @@ input[type='text'].input-error{
     width: 100%;
     color: #ccc;
 }
+
+
+.preview-container{
+    display:block;
+}

@@ -16,6 +16,11 @@
         families: ["Roboto Condensed:300,300italic,regular,italic,700,700italic"]
      }
     });
+
+
+    for(module in global.require.cache){
+        delete global.require.cache[module];
+    }
   </script>
 </head>
 <body>
@@ -25,21 +30,6 @@
     </section>
     <nav class="menubar">
       <h1 class="breakshot-logo"></h1>
-      <a class="w-inline-block nav-item" href="index.html">
-        <div class="nav-icon source">
-          <div class="nav-text">1. Source</div>
-        </div>
-      </a>
-      <a class="w-inline-block nav-item middle" href="sizing.html">
-        <div class="nav-icon size">
-          <div class="nav-text">2. format</div>
-        </div>
-      </a>
-      <a class="w-inline-block nav-item" href="output.html">
-        <div class="nav-icon quality">
-          <div class="nav-text">3. output</div>
-        </div>
-      </a>
       <a class="w-inline-block help-button" href="about.html">
         <div class="nav-icon-help"></div>
       </a>
