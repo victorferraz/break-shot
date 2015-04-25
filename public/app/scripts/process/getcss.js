@@ -29,6 +29,7 @@ GetCss.prototype.getCss = function (file) {
         for(var index=0; index < style.length; index++){
             array = [];
             array.css = path + style[index].attribs.href;
+            array.path = path;
             array.html = file[i].html;
             link.push(array);
         }

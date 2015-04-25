@@ -40,7 +40,6 @@ MediaQuerieRotine.prototype.readCss = function (style) {
 };
 
 MediaQuerieRotine.prototype.readArrayFiles = function (file) {
-    console.log(file);
     var array = [];
     var deferred = Q.defer();
     fs.readFile(file.css, 'utf8', function(err, result){
@@ -117,19 +116,17 @@ MediaQuerieRotine.prototype.getMedia = function (cssFile) {
             this.urlHtml = cssFile.html;
             res = this.findAdBanner(tree.rules);
             if (res !== null && res !== undefined){
+                console.log(res);
                 arrayBanner.push(res);
             }
 
         }
     }
     if ( arrayBanner.length >0 ) {
-        console.log(arrayBanner.length);
-        arrayMedia = media.concat(arrayBanner);
+        arrayMedia = arrayBanner;
     } else {
-        console.log(media);
         arrayMedia = media;
     }
-    console.log(arrayMedia);
 
     return arrayMedia;
 };
@@ -140,7 +137,7 @@ MediaQuerieRotine.prototype.findAdBanner = function (tree) {
     var res = null;
     for(var i=0; i < tree.length; i++){
         if (tree[i].selectors !== undefined) {
-            item = this.findKey(tree[i], '#background');
+            item = this.findKey(tree[i], '#breakshot');
             if (item !== undefined){
                 res = item;
             }
@@ -167,10 +164,10 @@ MediaQuerieRotine.prototype.findProperties = function (obj){
     var items = [];
     for(var i=0; i < obj.declarations.length; i++) {
         if (obj.declarations[i].name === 'width'){
-            items.size = obj.declarations[i].value + 'x';
+            items.size = obj.declarations[i].value.replace( /\D/g, '') + 'x';
         }
         if (obj.declarations[i].name === 'height') {
-            items.size = items.size + obj.declarations[i].value;
+            items.size = items.size + obj.declarations[i].value.replace( /\D/g, '');
         }
     }
     if('height' in items && 'width'in items) {

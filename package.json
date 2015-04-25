@@ -1,6 +1,7 @@
 {
   "name": "BreakShot",
-  "description": "",
+  "description": "break-shot",
+  "version": "0.1.0",
   "devDependencies": {
     "node-webkit-builder": "^1.0.11"
   }

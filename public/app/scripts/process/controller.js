@@ -21,11 +21,10 @@ Controller.prototype.go = function (data) {
     }).then( function(urlMain) {
         console.log(urlMain);
         var media = '';
-        media = MediaQuerieRotine.getBreakPoints(urlMain, settings);
         if (data.size === 'auto-sizing') {
-        //    media = DefaultSizes.getCommomScreens(settings);
+            media = MediaQuerieRotine.getBreakPoints(urlMain, settings);
         } else {
-         //   media = CustomSize.getSizes(settings);
+            media = CustomSize.getSizes(settings);
         }
         return media;
     }).then( function(mediaQueries) {

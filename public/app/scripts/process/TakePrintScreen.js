@@ -30,14 +30,14 @@ TakePrintScreen.prototype.takePics = function (mediaArray, data) {
 };
 
 
-TakePrintScreen.prototype.getPath = function (args) {
+TakePrintScreen.prototype.getPath = function () {
     var path = '';
     this.btSave.val('');
     if ( this.data.from === 'from-url' ){
         path = this.data.url;
         path = path.replace('http://', '');
     } else {
-        path = 'file://' + args.html;
+        path = this.data.origin;
     }
     return path;
 };
@@ -68,7 +68,7 @@ TakePrintScreen.prototype.take = function (sizes) {
     var arrayWidth = this.getWidth(sizes);
     var path;
     this.index++;
-    path = this.getPath(this.data.origin);
+    path = this.getPath();
     console.log(path);
     var pgeres = new pageres({delay: 5})
     .src(path, arrayWidth, {'filename': this.data.fileName + '<%= url %>-<%= size %>', 'format': this.data.extension })
