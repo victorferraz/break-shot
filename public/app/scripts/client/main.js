@@ -97,7 +97,8 @@ Main.prototype.addRow = function (e) {
     var target = $(e.currentTarget);
     var container = target.closest('.w-row');
     var parent = target.closest('.row');
-    var cloned = $(parent).clone().val('');
+    var cloned = $(parent).clone();
+    cloned.find('input').val('');
     cloned.appendTo(container);
 };
 

@@ -40,7 +40,6 @@ ReadHtml.prototype.readUrl = function (url) {
 };
 
 ReadHtml.prototype.readFiles = function (file) {
-    var self = this;
     var array = [];
     var deferred = Q.defer();
     fs.readFile(file, 'utf8', function(err, result){

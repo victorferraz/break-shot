@@ -14,8 +14,7 @@ CustomSize.prototype.mountArraySizes = function () {
 
     for(var i=0; i<customSize.length; i++) {
         arraySize = [];
-        arraySize.height = customSize[i].height;
-        arraySize.width = customSize[i].width;
+        arraySize.size = customSize[i].width + 'x' + customSize[i].height;
         arraySize.html = this.settings.origin;
         data.push(arraySize);
     }

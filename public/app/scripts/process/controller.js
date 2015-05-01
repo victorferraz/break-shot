@@ -19,7 +19,6 @@ Controller.prototype.go = function (data) {
         var urlMain = GetCss.run(readHtml, settings);
         return urlMain;
     }).then( function(urlMain) {
-        console.log(urlMain);
         var media = '';
         if (data.size === 'auto-sizing') {
             media = MediaQuerieRotine.getBreakPoints(urlMain, settings);
@@ -28,7 +27,6 @@ Controller.prototype.go = function (data) {
         }
         return media;
     }).then( function(mediaQueries) {
-        console.log(mediaQueries);
         var take = TakePrintScreen.takePics(mediaQueries, settings);
         return take;
     });

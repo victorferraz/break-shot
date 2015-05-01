@@ -18,11 +18,9 @@ TakePrintScreen.prototype.takePics = function (mediaArray, data) {
     var merged = [];
     var params = mediaArray;
     this.sidebar.html('');
-    console.log(mediaArray);
     if (data.size === 'auto-sizing'){
         params = merged.concat.apply(merged, mediaArray);
     }
-    console.log(data);
     this.take(mediaArray);
     async.eachLimit(mediaArray, 1, this.take.bind(this), function(err){
         console.log(err);
@@ -69,14 +67,10 @@ TakePrintScreen.prototype.take = function (sizes) {
     var path;
     this.index++;
     path = this.getPath();
-    console.log(path);
-    var pgeres = new pageres({delay: 5})
-    .src(path, arrayWidth, {'filename': this.data.fileName + '<%= url %>-<%= size %>', 'format': this.data.extension })
+    var pgeres = new pageres({delay: 5}).src(path, arrayWidth, {'filename': this.data.fileName + '-<%= size %>', 'format': this.data.extension })
             .dest(this.destiny);
-    console.log('teste3');
     var self = this;
     pgeres.run(function(err, streams){
-        console.log(streams);
         console.log(err);
         if (err) {
             throw err;
@@ -92,7 +86,6 @@ TakePrintScreen.prototype.getWidth = function (arraySizes) {
     for (var i = 0; i < arraySizes.length; i++) {
         arrayWidth[i] = arraySizes[i].size;
     }
-    console.log(arrayWidth);
     return arrayWidth;
 };
 
