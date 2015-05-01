@@ -1,16 +1,16 @@
 {
   "main": "index.html",
   "name": "break-shot",
-  "description": "demo app of node-webkit",
+  "description": "BreakShot",
   "version": "0.1.0",
   "keywords": [
     "resize",
     "node-webkit"
   ],
   "window": {
-    "title": "node-webkit demo",
+    "title": "BrekShot",
     "icon": "link.png",
-    "toolbar": true,
+    "toolbar": false,
     "frame": true,
     "width": 1100,
     "height": 700,

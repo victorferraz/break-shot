@@ -28,13 +28,26 @@ GetCss.prototype.getCss = function (file) {
         var style = $('link[rel=stylesheet]');
         for(var index=0; index < style.length; index++){
             array = [];
-            array.css = path + style[index].attribs.href;
+            var cssFile = style[index].attribs.href;
+            if (this.data.from === 'from-url') {
+                path = this.getPathUrl(cssFile);
+            }
+            array.css = path + cssFile;
             array.path = path;
             array.html = file[i].html;
             link.push(array);
         }
     }
     return link;
+};
+
+
+GetCss.prototype.getPathUrl = function (cssFile){
+    var urlFormated;
+    if (cssFile.search('http://') === -1){
+        urlFormated = this.data.origin + '/';
+    }
+    return urlFormated;
 };
 
 GetCss.prototype.getPath = function (url){

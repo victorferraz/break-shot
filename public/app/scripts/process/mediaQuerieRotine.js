@@ -71,7 +71,6 @@ MediaQuerieRotine.prototype.analysisCss = function (arrayStyle) {
     this.verifyArray = [];
     this.verifyAdExists = false;
     var breakPoints = null;
-    var result = null;
     for (var i = 0; i < arrayStyle.length; i++) {
         cssFile = arrayStyle[i];
         breakPoints = null;
@@ -83,9 +82,6 @@ MediaQuerieRotine.prototype.analysisCss = function (arrayStyle) {
         }
     }
     return media;
-};
-
-MediaQuerieRotine.prototype.mergeArray = function  () {
 };
 
 MediaQuerieRotine.prototype.getMedia = function (cssFile) {
@@ -152,6 +148,7 @@ MediaQuerieRotine.prototype.findKey = function (obj, selector) {
     var properties = null;
     for(var index=0; index < obj.selectors.length; index++){
         if (obj.selectors[index] === selector) {
+            console.log(obj);
             properties = this.findProperties(obj);
         }
     }
