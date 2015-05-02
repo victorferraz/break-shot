@@ -35,7 +35,7 @@ npm i
 # Download
 MacOsx [osx32](https://github.com/rcdigital/break-shot/releases/download/1.0/break-shot-osx32.zip) 
 
-# How to  contribuete
+# How to  contribute
 - If you find a bug create a issue, with the label bug.
 - If yout miss a feature, don't hesitate to create a pull-request. 
 
