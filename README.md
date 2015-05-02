@@ -44,6 +44,6 @@ Victor Ferraz [@victorferraz](https://github.com/victorferraz)
 #####Designer
 Bruno Magalhães [@brunomagalhaes](https://www.facebook.com/BrunodeMagalhaes?fref=ts)
 
-# Credtis
+# Credits 
 The persons who had the idea
 Marlos Carmo [@marloscarmo](https://github.com/marloscarmo)
