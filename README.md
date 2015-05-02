@@ -25,7 +25,10 @@ Create your banners using media queries in diferentes resolutions and user #brea
 
 # How to install
 ```bash
-git clone https://github.com/rcdigital/break-shot.git && cd break-shot && npm i && /Applications/nwjs.app/Contents/MacOS/nwjs . 
+git clone https://github.com/rcdigital/break-shot.git
+cd break-shot
+npm i
+/Applications/nwjs.app/Contents/MacOS/nwjs . 
 
 ```
 
