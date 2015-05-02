@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>breakshot-v2</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="generator" content="Webflow">
+  <link rel="stylesheet" type="text/css" href="app/css/normalize.css">
+  <link rel="stylesheet" type="text/css" href="app/css/webflow.css">
+  <link rel="stylesheet" type="text/css" href="app/css/breakshot-v2.webflow.css">
+  <link rel="stylesheet" type="text/css" href="app/css/custom_webflow.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/webfont/1.4.7/webfont.js"></script>
+  <script>
+    WebFont.load({
+      google: {
+        families: ["Roboto Condensed:300,300italic,regular,italic,700,700italic"]
+     }
+    });
+
+
+    for(module in global.require.cache){
+        delete global.require.cache[module];
+    }
+  </script>
+</head>
+<body>
+  <main class="global-container">
+    <section class="modal">
+      <p class="wait-text">Aguarde, isso pode demorar alguns minutos...</p>
+    </section>
+    <nav class="menubar">
+      <h1 class="breakshot-logo"></h1>
+      <a class="w-inline-block help-button" href="about.html">
+        <div class="nav-icon-help"></div>
+      </a>
+    </nav>
+    <section class="main-container">
+
+      <div class="content source" id="main-content">
+        <form id="form" action="">
+          <fieldset data-step="1" class="step source step-one">
+            <div class="w-clearfix title-container">
+              <i class="title-icon source"></i>
+              <h2>source selection</h2>
+            </div>
+            <div class="w-clearfix options-container required" data-group-checkbox="true">
+              <span  id="bt-from-url" class="w-inline-block options-button bt-from-url" href="#">
+                  From an URL
+                  <input type="radio" class="from choose-type" name="choose-type" value="from-url" >
+              </span>
+              <span class="or-badge">or</span>
+              <span id="bt-from-file" class="w-inline-block options-button bt-from-file" href="#">
+                  From A file
+                  <input type="radio" class="from choose-type" name="choose-type" value="from-file" >
+              </span>
+            </div>
+            <div class="type from-url type-url w-clearfix title-container">
+              <h3>Type an URL:</h3>
+              <input class="w-input text-field url required" id="URL" type="text" placeholder="http://" name="url">
+            </div>
+            <div class="type from-file open-zip-file w-clearfix title-container">
+              <h3>open a zip file:</h3>
+              <p>In order to read your breakpoints properly in local files, you’ll need to zip together the HTML and all CSS files related to it.&nbsp;</p>
+              <div class="navigation-button ordinary">
+                <input type="file" class="file required" name="file" multiple>
+                <span class="label-file">Choose file</span>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset data-step="2" class="step step-two">
+            <div class="w-clearfix title-container">
+              <i class="title-icon format"></i>
+              <h2>sizing options</h2>
+            </div>
+            <div class="w-clearfix options-container required" data-group-checkbox="true">
+              <span data-type="" id="bt-auto-size" class="w-inline-block options-button bt-auto-sizing" href="#">
+                  AUTO SIZING
+                  <input type="radio" class="choose-size choose-type required" name="choose-size" value="auto-sizing" >
+              </span>
+              <span class="or-badge">or</span>
+              <span id="bt-custom-size" class="w-inline-block options-button bt-custom-size" href="#">
+                  CUSTOM SIZE
+                  <input type="radio" class="choose-size choose-type required" name="choose-size" value="custom-size" >
+              </span>
+            </div>
+
+            <div class="type auto-sizing">
+              <h3>Auto sizing</h3>
+              <p>Auto Size property is the ability to read ,understand and generate screenshots from all existing breakpoints in your project. It’s also meant to read the height of an element since you set it's ID as <span class="paragraph-complement">breakshot</span>.
+                In that case, you’ll be given a file with limited height for each breakpoint. It’s very useful for generating responsive banners and ads.&nbsp;Leave it selected and let the application work for you.</p>
+            </div>
+            <div class="type custom-size">
+              <h3>Custom size</h3>
+              <p>Set width and height values in order to generate custom and specific pixel dimensions. You may also set a variety of custom sizes for the same project by clicking the<span class="paragraph-complement"> “+” </span>button after each size input.</p>
+              <div class="w-row">
+                <div class="row row-size">
+                  <div class="w-col w-col-5 column left">
+                    <input class="w-input choose-s text-field choose-width required"  type="text" placeholder="choose-extension Width pixels" name="custom-width[]" >
+                  </div>
+                  <div class="w-col w-col-5">
+                    <input class="w-input choose-s text-field choose-height required"  type="text" placeholder="choose-extension Height pixels" name="custom-height[]" >
+                  </div>
+                  <div class="w-col w-col-1 column right">
+                    <span class="x">x</span>
+                  </div>
+                  <div class="w-col w-col-1 w-clearfix column">
+                    <a class="w-inline-block button-add" href="#"></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+          <fieldset data-step="3" class="step step-three">
+            <div class="w-clearfix title-container">
+              <div class="title-icon output"></div>
+              <h2>output options</h2>
+            </div>
+            <div class="w-clearfix options-container">
+              <span data-type="" id="bt-auto-size" class="w-inline-block options-button bt-output-jpg" href="#">
+                  JPG
+                  <input type="radio" class="choose-extension choose-type required" name="size-type" value="jpg" >
+              </span>
+              <span class="or-badge">or</span>
+              <span id="bt-custom-size" class="w-inline-block options-button bt-output-png" href="#">
+                  PNG
+                  <input type="radio" class="choose-extension choose-type required" name="size-type" value="png" >
+              </span>
+            </div>
+            <div>
+              <h3>Define output filename:</h3>
+              <input class="file-name w-input text-field" id="Filename" type="text" placeholder="Insert your filename prefix. Sizes and extensions will be added automatically." name="Filename">
+            </div>
+          </fieldset>
+        </form>
+      </div>
+      <div class="w-clearfix actions-button-container">
+        <a class="nav navigation-button previous" href="#">previous step</a>
+        <a  class="nav navigation-button next" href="#">next step</a>
+      </div>
+    </section>
+    <aside class="sidebar-container">
+      <div class="sidebar">
+        <div class="w-clearfix title-container">
+          <div class="title-icon"></div>
+          <h2>Preview &amp; Save</h2>
+        </div>
+      </div>
+      <div class="download-button-container">
+        <a  href="#" class="navigation-button save none">Save files
+            <input type="file" name="destiny" class="save-destiny"  webkitdirectory >
+        </a>
+
+      </div>
+    </aside>
+  </main>
+  <script src="app/scripts/client/vendor/jquery.js"></script>
+  <script src="app/scripts/client/main.js"></script>
+</body>
+</html>
