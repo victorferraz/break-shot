@@ -7,6 +7,9 @@ It's possible are you choose a others resolutions.
 It can also take a print for just html selector called '#breakshot'.
 
 # Features
+- Print Screen of selected size.
+- Detect sizes and take a print screen.
+- Detect sizes of #breakshot selector and take a print screen through of #breakshot dimensions. 
 
 
 # Usage simple detect breakpoint
@@ -30,8 +33,6 @@ git clone https://github.com/rcdigital/break-shot.git && cd break-shot && npm i 
 MacOsx [osx32](https://github.com/rcdigital/break-shot/releases/download/1.0/break-shot-osx32.zip) 
 
 # How to contribuete
-
-# Contributing
 - If you find a bug create a issue, with the label bug.
 - If yout miss a feature, don't hesitate to create a pull-request. 
 
