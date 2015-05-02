@@ -21,7 +21,10 @@ It can also take a print for just html selector called '#breakshot'.
 Create your banners using media queries in diferentes resolutions and user #breakshot selector. 
 
 # How to install
-G
+```bash
+git clone https://github.com/rcdigital/break-shot.git && cd break-shot && npm i && /Applications/nwjs.app/Contents/MacOS/nwjs . 
+
+```
 
 # Download
 MacOsx [osx32](https://github.com/rcdigital/break-shot/releases/download/1.0/break-shot-osx32.zip) 
