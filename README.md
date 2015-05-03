@@ -2,9 +2,9 @@
 # ![break shot](http://i.imgur.com/pz4yf10.jpg?1)
 
 # About
-Break Shot is amazing screen capture for responsive websites. It's detects all resolutions and take a print screens.
-It's possible are you choose a others resolutions.
-It can also take a print for just html selector called '#breakshot'.
+Break Shot is an amazing screen capture for responsive websites. It detects all resolutions and take a print screens.
+It's possible to select another resolutions. 
+It can also take a print screen for just html selector called '#breakshot'.
 
 # Features
 - Print Screen of selected size.
