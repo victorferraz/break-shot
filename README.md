@@ -1,57 +1,50 @@
 # Break Shot
-# ![break shot](http://i.imgur.com/pz4yf10.jpg?1)
+![break shot](http://i.imgur.com/pz4yf10.jpg?1)
 
-# About
-Break Shot is an amazing screen capture for responsive websites. It detects all resolutions and take a print screens.
-It's possible to select another resolutions. 
-It can also take a print screen for just html selector called '#breakshot'.
+## About
+Break Shot is an amazing screen capture app for responsive websites. It detects all available resolutions and take screenshots of each one.
 
-# Features
-- Print Screen of selected size.
-- Detect sizes and take a print screen.
-- Detect sizes of #breakshot selector and take a print screen through of #breakshot dimensions. 
+## Features
+- Detects resolutions available in your website and take screenshots for each breakpoint
+- Take screenshots of your website at custom sizes, defined through the user interface
+- Support to a `#breakshot` element to be used as a screenshot canvas
 
+## Simple usage
 
-# Usage simple detect breakpoint
-1. Chose source selection (local html file) from an url or from a file (complete URL of site)
-2. Click in next step
-3. Choose auto sizing (break shot will find media queries break point) or custom size ( your prefered resolution, such as 800 x 600, 1024 x 768, etc)
-4. Click in next
-5. Chose a extension of file and outpu file name.
-6. Click in save file, chose directory.
+### Detecting a breakpoint
+1. Select source, it can be either a live URL or a local file
+2. Next
+3. Choose between auto sizing (break shot will find media-queries to define breakpoints) or custom size (it can be any resolution you want, e.g. 800 x 600, 1024 x 768)
+4. Next
+5. Select a file extension and your desired output file name.
+6. Click in Save File, choose output directory.
 
-# Usage generate ad banner
-Create your banners using media queries in diferentes resolutions and user #breakshot selector. 
+### Generate ad banner
+Create your banners using media-queries in diferents resolutions and user `#breakshot` selector. 
 
-# How to install
+## Download
+Here you can find the binaries to run in your preferred system.
+
+- Mac OSX [osx32](https://github.com/rcdigital/break-shot/releases/download/1.0/break-shot-osx32.zip) 
+
+## How to contribute
+- If you found a bug, please create an issue with the bug label.
+- If yout miss a feature, don't hesitate to create a pull-request.
+
+### Development setup
 ```bash
 git clone https://github.com/rcdigital/break-shot.git
 cd break-shot
 npm i
 /Applications/nwjs.app/Contents/MacOS/nwjs . 
-
 ```
 
-# Download
-MacOsx [osx32](https://github.com/rcdigital/break-shot/releases/download/1.0/break-shot-osx32.zip) 
+## Creators 
+- Victor Ferraz [@victorferraz](https://github.com/victorferraz) | **Development**
+- Bruno Magalhães [@brunomagalhaes](https://www.facebook.com/BrunodeMagalhaes?fref=ts) | **Design**
 
-# How to  contribute
-- If you find a bug create a issue, with the label bug.
-- If yout miss a feature, don't hesitate to create a pull-request. 
-
-
-# Creators 
-#####Developer
-Victor Ferraz [@victorferraz](https://github.com/victorferraz)
-
-#####Designer
-Bruno Magalhães [@brunomagalhaes](https://www.facebook.com/BrunodeMagalhaes?fref=ts)
-
-# Credits 
-The persons who had the idea
-Marlos Carmo [@marloscarmo](https://github.com/marloscarmo)
+## Credits 
+Kudos to Marlos Carmo [@marloscarmo](https://github.com/marloscarmo) who had the original idea for **Break Shot**.
 
 ## License
-
 Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
-
