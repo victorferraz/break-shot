@@ -50,3 +50,8 @@ Bruno Magalhães [@brunomagalhaes](https://www.facebook.com/BrunodeMagalhaes?fre
 # Credits 
 The persons who had the idea
 Marlos Carmo [@marloscarmo](https://github.com/marloscarmo)
+
+## License
+
+Released under the [MIT License](http://www.opensource.org/licenses/mit-license.php).
+
