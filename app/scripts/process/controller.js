@@ -1,9 +1,9 @@
 'use strict';
 
 var GetCss = require('../process/getcss');
-var MediaQuerieRotine = require('../process/mediaquerierotine');
-var TakePrintScreen = require('../process/takeprintscreen');
-var ReadHtml = require('../process/readHtml');
+var MediaQuerieRotine = require('../process/mediaquerieRotine');
+var TakePrintScreen = require('../process/takeprintScreen');
+var ReadHtml = require('../process/readhtml');
 var CustomSize = require('../process/customsize');
 
 var Q = require('q');
