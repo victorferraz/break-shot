@@ -23,9 +23,7 @@ Break Shot is an amazing screen capture app for responsive websites. It detects 
 Create your banners using media-queries in diferents resolutions and user `#breakshot` selector. 
 
 ## Download
-Here you can find the binaries to run in your preferred system.
-
-- Mac OSX [osx32](https://github.com/rcdigital/break-shot/releases/download/1.0/break-shot-osx32.zip) 
+[Here](https://github.com/victorferraz/break-shot/releases) you can find the binaries to run in your preferred system.
 
 ## How to contribute
 - If you found a bug, please create an issue with the bug label.
@@ -33,7 +31,7 @@ Here you can find the binaries to run in your preferred system.
 
 ### Development setup
 ```bash
-git clone https://github.com/rcdigital/break-shot.git
+git clone https://github.com/victorferraz/break-shot.git
 cd break-shot
 npm i
 /Applications/nwjs.app/Contents/MacOS/nwjs . 
